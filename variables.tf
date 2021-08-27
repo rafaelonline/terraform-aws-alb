@@ -5,7 +5,7 @@ variable name_lb {
 
 variable "internal" {
   type        = bool
-  default     = false
+  default     = true
   description = "A boolean flag to determine whether the ALB should be internal"
 }
 
@@ -222,12 +222,4 @@ variable "http_ingress_prefix_list_ids" {
   type        = list(string)
   default     = []
   description = "List of prefix list IDs for allowing access to HTTP ingress security group"
-}
-
-variable "environment" {
-  type = string
-}
-
-variable "owner" {
-  type = string
 }

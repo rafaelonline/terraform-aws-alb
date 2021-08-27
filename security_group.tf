@@ -14,6 +14,7 @@ resource "aws_security_group" "default" {
 }
 
 resource "aws_security_group_rule" "egress" {
+  description       = "Controls egress access"
   type              = "egress"
   from_port         = "0"
   to_port           = "0"
@@ -24,6 +25,7 @@ resource "aws_security_group_rule" "egress" {
 
 resource "aws_security_group_rule" "http_ingress" {
   count             = var.http_enabled ? 1 : 0
+  description       = "Controls HTTP access"
   type              = "ingress"
   from_port         = var.http_port
   to_port           = var.http_port
@@ -35,6 +37,7 @@ resource "aws_security_group_rule" "http_ingress" {
 
 resource "aws_security_group_rule" "https_ingress" {
   count             = var.https_enabled ? 1 : 0
+  description       = "Controls HTTPs access"
   type              = "ingress"
   from_port         = var.https_port
   to_port           = var.https_port

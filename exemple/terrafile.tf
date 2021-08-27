@@ -1,6 +1,6 @@
 
 module "alb" {
-  source                = "./modules/alb"
+  source                = "./../"
   target_group_port     = "80"
   target_group_protocol = "HTTP"
   name_lb               = "myalb"
@@ -12,7 +12,4 @@ module "alb" {
   target_group_name = "tg-my-alb-80"
   vpc_id            = "vpc-f60xxxxxx"
   target_id         = ["172.31.46.113", "172.31.10.67"]
-
-  environment = "prod"
-  owner       = "TI"
 }
